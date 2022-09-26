@@ -29,6 +29,8 @@ function App() {
       .sort(() => Math.random() - 0.5) //will sort it randomly 
       .map((card) => ({ ...card, id: Math.random() }));
 
+    setChoiceOne(null);
+    setChoiceTwo(null);
     setCards(shuffledCards);
     setTurns(0);
   }
@@ -64,6 +66,10 @@ function App() {
     setDisabled(false)
   }
 
+  useEffect(() => {
+    shuffleCards()
+  }, []);
+
 
 
   return (
@@ -82,6 +88,7 @@ function App() {
             disabled={disabled} />
         ))}
       </div>
+      <p>Turns: {turns}</p>
     </div>
   );
 }
