@@ -3,7 +3,10 @@ import "./SingleCard.css"
 
 export const SingleCard = (props) => {
   const handleEvent = () => {
-    props.handleChoice(props.card)
+    if (!props.disabled) {
+      props.handleChoice(props.card)
+    }
+
   }
   return (
     <div className='card'>
