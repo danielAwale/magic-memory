@@ -3,8 +3,7 @@ import "./SingleCard.css"
 
 export const SingleCard = (props) => {
   const handleEvent = () => {
-    console.log(props.handleChoice(props.card))
-
+    props.handleChoice(props.card)
   }
   return (
     <div className='card'>
